@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/blue"
+    android:paddingStart="56dp"
+    android:paddingTop="20dp"
+    android:paddingBottom="20dp"
+    android:paddingEnd="16dp">
+
+    <TextView
+        android:id="@+id/tvDateTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Today, April 20"
+        android:textSize="25sp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/layout_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="bottom"
+        app:layout_constraintTop_toBottomOf="@+id/tvDateTime"
+        app:layout_constraintStart_toStartOf="@+id/tvDateTime"
+        app:layout_constraintEnd_toEndOf="@+id/tvDateTime">
+
+        <TextView
+            android:id="@+id/tvMaxTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="16\u00B0"
+            android:textSize="50sp"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/tvMinTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="4\u00B0"
+            android:textSize="35sp"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tvAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="London, UK"
+        android:textSize="25sp"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@id/tvDateTime"
+        app:layout_constraintTop_toBottomOf="@id/layout_temp"
+        app:layout_constraintEnd_toEndOf="@id/tvDateTime"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+    <ImageView
+        android:id="@+id/imgTypeWeather"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        tools:src="@drawable/art_clear"
+        app:layout_constraintEnd_toEndOf="@id/tvTypeWeather"
+        app:layout_constraintStart_toStartOf="@id/tvTypeWeather"
+        app:layout_constraintBottom_toTopOf="@id/tvTypeWeather"
+        />
+    <TextView
+        android:id="@+id/tvTypeWeather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Clear"
+        android:textSize="25sp"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_temp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
