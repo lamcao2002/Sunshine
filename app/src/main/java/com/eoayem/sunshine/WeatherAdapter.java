@@ -21,7 +21,7 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.WeatherV
 
     private List<Weather> listWeather;
 
-    public WeatherAdapter(@NonNull Context context, List<Weather> listWeather, Callback callback) {
+    public WeatherAdapter(List<Weather> listWeather, Callback callback) {
         this.listWeather = listWeather;
         this.callback = callback;
     }
@@ -29,8 +29,8 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.WeatherV
     @NonNull
     @Override
     public WeatherViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        int item_layout = viewType == VIEW_TYPE_1 ? R.layout.item_weather_art : R.layout.item_weather;
-        View view = LayoutInflater.from(parent.getContext()).inflate(item_layout, parent, false);
+        int itemLayout = viewType == VIEW_TYPE_1 ? R.layout.item_weather_art : R.layout.item_weather;
+        View view = LayoutInflater.from(parent.getContext()).inflate(itemLayout, parent, false);
         return new WeatherViewHolder(view);
     }
 

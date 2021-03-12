@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        weatherAdapter = new WeatherAdapter(this, listWeather, new WeatherAdapter.Callback() {
+        weatherAdapter = new WeatherAdapter(listWeather, new WeatherAdapter.Callback() {
             @Override
             public void onClickItem(int index, Weather weather) {
                 openDetailActivity(weather);
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void openDetailActivity(Weather weather) {
-        Intent intent = new Intent(getApplicationContext(), DetailActivity.class);
+        Intent intent = new Intent(this, DetailActivity.class);
         Bundle bundle = new Bundle();
         bundle.putSerializable(Weather.WEATHER_TAG, weather);
         intent.putExtras(bundle);
